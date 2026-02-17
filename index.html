@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muhammad Farhan Maulidan | Software Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+<style>
+:root {
+  --bg-main:#0B132B;
+  --bg-alt:#111C3A;
+  --accent:#19F2C2;
+  --accent-blue:#1DA1F2;
+  --text-main:#E6F1FF;
+  --text-soft:#8AA2C8;
+}
+
+/* GLOBAL */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(29,161,242,0.08), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(25,242,194,0.06), transparent 40%),
+              var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* subtle animated glow */
+body::before {
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  background: radial-gradient(circle, rgba(25,242,194,0.08), transparent 70%);
+  top:-200px;
+  right:-200px;
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  z-index:-1;
+}
+
+@keyframes floatGlow {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
+}
+
+nav {
+  background: rgba(11,19,43,0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+nav a {
+  color: var(--text-soft);
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a[role="button"] {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+nav a[role="button"]:hover {
+  background: var(--accent);
+  color: var(--bg-main);
+}
+
+section {
+  padding: 7rem 0;
+  position: relative;
+}
+
+/* Accent divider line */
+section::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:60%;
+  height:1px;
+  background: linear-gradient(to right, transparent, rgba(25,242,194,0.3), transparent);
+}
+
+.alt {
+  background: var(--bg-alt);
+}
+
+/* HERO */
+.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--text-soft);
+  max-width: 650px;
+}
+
+.section-title {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* CARDS */
+.card {
+  background: var(--bg-alt);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 50px rgba(25,242,194,0.08);
+  transform: translateY(-6px);
+}
+
+/* Timeline */
+.timeline-item {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  transition: 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+}
+
+.timeline-item h4 {
+  color: var(--accent);
+}
+
+/* Badges */
+.badge {
+  display:inline-block;
+  padding:0.4rem 0.8rem;
+  margin:0.3rem;
+  border-radius:20px;
+  background:rgba(25,242,194,0.1);
+  border:1px solid rgba(25,242,194,0.4);
+  font-size:0.8rem;
+  transition:0.3s ease;
+}
+
+.badge:hover {
+  background: var(--accent);
+  color: var(--bg-main);
+}
+
+/* CONTACT */
+.contact-card input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-main);
+}
+
+.contact-card input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.contact-card button {
+  background: var(--accent);
+  border: none;
+  color: var(--bg-main);
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact-card button:hover {
+  background: var(--accent-blue);
+  box-shadow: 0 0 20px rgba(25,242,194,0.4);
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg-main);
+  border-top: 1px solid rgba(25,242,194,0.2);
+  padding: 4rem 0 2rem 0;
+  color: var(--text-soft);
+}
+
+footer a {
+  color: var(--text-soft);
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing Cursor */
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Animated Nav Underline */
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:2px;
+  background: var(--accent);
+  transition:0.3s ease;
+}
+
+nav a:hover::after {
+  width:100%;
+}
+
+/* Project animated border */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:1px;
+  background: linear-gradient(90deg, transparent, rgba(25,242,194,0.4), transparent);
+  -webkit-mask:
+     linear-gradient(#000 0 0) content-box,
+     linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity:0;
+  transition:0.4s;
+}
+
+.card:hover::before {
+  opacity:1;
+}
+
+/* Timeline dots */
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  left:-7px;
+  top:5px;
+  width:10px;
+  height:10px;
+  background: var(--accent);
+  border-radius:50%;
+}
+.timeline-item {
+  position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="container-fluid">
+<ul>
+<li><strong>Farhan.dev</strong></li>
+</ul>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Experience</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#" role="button">Contact</a></li>
+</ul>
+</nav>
+
+<main class="container">
+
+<!-- HERO -->
+ <section class="hero reveal">
+<!-- <section class="hero"> -->
+<h1>Hello, I'm <span>Farhan</span></h1>
+<h3 id="typing"></h3>
+<!-- <h3>Software Engineer | Full-Stack | Mobile | Scalable Systems</h3> -->
+<p class="subtitle">
+Over 5 years building scalable systems across e-commerce, AI-powered platforms,
+enterprise tools, and IoT integrations. Delivered 120+ projects with strong focus
+on performance, clean architecture, and long-term scalability.
+</p>
+</section>
+
+</main>
+
+<!-- STORY -->
+<section class="alt">
+<div class="container">
+<h2 style="color:var(--accent)">#My Story</h2>
+<p class="subtitle">
+I started building software during my university years, developing Android learning
+applications and e-learning platforms. Over time, I transitioned into full-stack and
+backend engineering, working on high-traffic e-commerce systems and scalable
+microservices architecture.
+<br><br>
+Today, I focus on building reliable systems that support thousands of daily users,
+combining performance optimization with intelligent automation.
+</p>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+<div class="container">
+<h2 style="color:var(--accent)">#Experience</h2>
+
+<div class="timeline-item">
+<h4>Web Order Engineer — Alfagift (2023–Present)</h4>
+<p class="subtitle">Optimizing checkout flows, API performance, and microservices integration for high-volume e-commerce systems.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Freelance Software Engineer (2020–Present)</h4>
+<p class="subtitle">Delivered 120+ web & mobile projects including AI search engines, automation bots, and IoT-based systems.</p>
+</div>
+
+<div class="timeline-item">
+<h4>Junior Programmer — DartMedia (2022)</h4>
+<p class="subtitle">Built business logic modules and handled backend troubleshooting for client applications.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="alt">
+<div class="container">
+<h2 style="color:var(--accent)">#Featured Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h4>Alfagift Web Order</h4>
+<p>Checkout & product flow optimization using Vue.js & Go for scalable retail systems.</p>
+</div>
+
+<div class="card">
+<h4>AI Search Agent</h4>
+<p>Spring Boot + Apache Solr intelligent ranking & discovery engine.</p>
+</div>
+
+<div class="card">
+<h4>YOLO Android Detection</h4>
+<p>Integrated YOLOv8 model for real-time object detection.</p>
+</div>
+
+<div class="card">
+<h4>BekaMate IoT System</h4>
+<p>Kotlin mobile app communicating with ESP32 device.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+<div class="container">
+<h2 style="color:var(--accent)">#Tech Stack</h2>
+<p>
+<span class="badge">Vue.js</span>
+<span class="badge">Nuxt 3</span>
+<span class="badge">React</span>
+<span class="badge">Go</span>
+<span class="badge">Spring Boot</span>
+<span class="badge">Node.js</span>
+<span class="badge">Kotlin</span>
+<span class="badge">PostgreSQL</span>
+<span class="badge">MongoDB</span>
+<span class="badge">Docker</span>
+<span class="badge">Redis</span>
+</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="container">
+
+    <div style="margin-bottom:3rem;">
+      <h2 class="section-title">#Contact</h2>
+      <p class="subtitle">
+        Let’s collaborate on scalable systems, performance optimization,
+        or intelligent automation solutions.
+      </p>
+    </div>
+
+    <div class="card contact-card">
+      <h3>Start a Conversation</h3>
+
+      <form class="grid">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <button type="submit" onclick="event.preventDefault()">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+<div class="container">
+<div style="text-align:center;">
+© 2026 Muhammad Farhan Maulidan
+</div>
+</div>
+</footer>
+
+</body>
+</html>
+<script>
+// Scroll Reveal
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show');}
+});
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Typing effect
+const text="Software Engineer | Full-Stack | Scalable Systems";
+let i=0;
+const typing=document.getElementById("typing");
+typing.innerHTML="";
+function type(){
+if(i<text.length){
+typing.innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+
+// Cursor Glow
+const glow = document.createElement("div");
+glow.style.position = "fixed";
+glow.style.width = "300px";
+glow.style.height = "300px";
+glow.style.pointerEvents = "none";
+glow.style.background = "radial-gradient(circle, rgba(25,242,194,0.08), transparent 60%)";
+glow.style.borderRadius = "50%";
+glow.style.zIndex = "0";
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", e => {
+  glow.style.left = e.clientX - 150 + "px";
+  glow.style.top = e.clientY - 150 + "px";
+});
+</script>
