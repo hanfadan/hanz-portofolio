@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { ProjectEntry } from "./types";
 
 type ProjectModalProps = {
@@ -17,13 +16,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="modal-content" onClick={(event) => event.stopPropagation()}>
           {project.imageSrc ? (
             <div className="project-modal-image-wrap">
-              <Image
+              <img
                 src={project.imageSrc}
                 alt={project.imageAlt ?? project.title}
-                width={1200}
-                height={700}
                 className="project-modal-image"
-                sizes="(max-width: 768px) 100vw, 640px"
               />
             </div>
           ) : null}

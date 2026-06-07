@@ -181,7 +181,7 @@ export const projectEntries: ProjectEntry[] = [
     title: "APO - Online Ordering Application",
     summary:
       "Designed and implemented checkout and tracking modules with optimized state management and stable API integration. Focused on performance, scalability, and seamless user experience.",
-    imageSrc: "/projects/apo-online-ordering.png",
+    imageSrc: "projects/apo-online-ordering.png",
     imageAlt: "APO online ordering application logo",
     role: "Web Developer (Vue.js)",
     stack: "Vue.js, Pinia, BootstrapVue, REST API",
@@ -197,7 +197,7 @@ export const projectEntries: ProjectEntry[] = [
     title: "Alfagift - Online Grocery App",
     summary:
       "Contributed to a large-scale retail platform serving thousands of users daily with responsive UI modules and stable transaction flows.",
-    imageSrc: "/projects/alfagift-online-grocery.png",
+    imageSrc: "projects/alfagift-online-grocery.png",
     imageAlt: "Alfagift logo",
     role: "Frontend Engineer",
     stack: "JavaScript, Vue, REST API",
@@ -212,7 +212,7 @@ export const projectEntries: ProjectEntry[] = [
     title: "Bhargava Bot - Telegram Automation Tool",
     summary:
       "Built modular automation workflows with resilient API integration and task schedulers, designed for scalability and automated monitoring.",
-    imageSrc: "/projects/bhargava-bot-telegram.jpg",
+    imageSrc: "projects/bhargava-bot-telegram.jpg",
     imageAlt: "Bhargava bot project preview",
     role: "Full-Stack Developer",
     stack: "Node.js, Telegram API",
@@ -227,7 +227,7 @@ export const projectEntries: ProjectEntry[] = [
     title: "V-Fluid - Mobile App (Unity)",
     summary:
       "Developed sensor-based interactive mobile features optimized for low-spec devices, with focus on performance efficiency and real-time interaction.",
-    imageSrc: "/projects/v-fluid-mobile-app.png",
+    imageSrc: "projects/v-fluid-mobile-app.png",
     imageAlt: "V-Fluid mobile app logo",
     role: "Mobile Developer",
     stack: "C#, Unity",

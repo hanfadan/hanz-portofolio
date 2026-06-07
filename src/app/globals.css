@@ -21,6 +21,7 @@ body {
     radial-gradient(circle at 80% 70%, rgb(25 242 194 / 6%), transparent 40%),
     var(--bg-main);
   color: var(--text-main);
+  font-family: Inter, system-ui, sans-serif;
   overflow-x: hidden;
   margin: 0;
 }

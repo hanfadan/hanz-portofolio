@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { ProjectEntry } from "./types";
 
 type ProjectsSectionProps = {
@@ -36,14 +35,11 @@ export default function ProjectsSection({
             >
               {project.imageSrc ? (
                 <div className="project-card-image-wrap">
-                  <Image
+                  <img
                     src={project.imageSrc}
                     alt={project.imageAlt ?? project.title}
-                    width={640}
-                    height={320}
                     className="project-card-image"
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
               ) : null}
