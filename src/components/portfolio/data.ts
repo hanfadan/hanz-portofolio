@@ -133,15 +133,6 @@ export const experienceEntries: ExperienceEntry[] = [
     ],
   },
   {
-    title: "B2B IT Development - PT. Sumber Alfaria Trijaya, Tbk (Alfamart)",
-    meta: "Internship | Mar 2023 - Apr 2023 | Tangerang, Banten, Indonesia (On-site)",
-    points: [
-      "Developed IT services for B2B business operations.",
-      "Maintained and improved B2B IT services.",
-    ],
-    skills: "Vue.js, Go",
-  },
-  {
     title: "Junior Programmer - DartMedia",
     meta: "Contract | Apr 2022 - Dec 2022 | West Jakarta, Jakarta, Indonesia (On-site)",
     points: [
